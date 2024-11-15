@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div class="contenedor" id="contenedor">
+        <div class="pagina" id="pagina0">
+            <div class="triangle" id="triangle0"></div>
+            <h1 class="titulo" id="titulo_0">Pagina 0</h1>
+            <div class="page-nav" id="page-nav0">
+                <button class="boton" id="botonA0">Anterior</button>
+                <button class="boton" id="botonS0" onclick="nextPage('pagina1')">Siguiente</button>
+            </div>
+        </div>
+        
+        <div class="pagina" id="pagina1">
+            <div class="triangle" id="triangle1"></div>
+            <h1 class="titulo" id="titulo_1">Pagina 1</h1>
+            <div class="page-nav">
+                <button class="boton" id="botonA1" onclick="previousPage('pagina0')">Anterior</button>
+                <button class="boton" id="botonS1" onclick="nextPage('pagina2')">Siguiente</button>
+            </div>
+        </div>
+
+        
+        <div class="pagina" id="pagina2">
+            <div class="triangle" id="triangle2"></div>
+            <h1 class="titulo" id="titulo_2">Pagina 2</h1>
+            <div class="page-nav">
+                <button class="boton" id="botonA2" onclick="previousPage('pagina1')">Anterior</button>
+                <button class="boton" id="botonS2" >Siguiente</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
