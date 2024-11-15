@@ -1,5 +1,5 @@
 la pagina del cvu es:
-	https://luisrey13.github.io/CVU/
+	https://luisrey13.github.io/CvuWeb/
 
 Para subir al GitConacyt:
 	- ir a la carpeta clonada

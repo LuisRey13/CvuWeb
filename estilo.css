@@ -9,8 +9,6 @@ body {
     position: absolute;
     left: 50%;
     top:3%;
-    width: min(600px,60%);
-    height: min(900px,90%);
     transform: translateX(-50%);
     margin: 0 auto;
     background-color: rgba(255, 255, 255, 0);

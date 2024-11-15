@@ -1,4 +1,18 @@
-let contenedor = document.getElementById("contenedor");
+function initContenedor(){
+    let contenedor = document.getElementById("contenedor");
+
+    const anchoPantalla = window.innerWidth;
+    const altoPantalla = window.innerHeight;
+
+    if(anchoPantalla<altoPantalla){
+        contenedor.style.width=String(anchoPantalla*.9)+"px";
+        contenedor.style.height=String(anchoPantalla*.9)*9/6+"px";
+    }else{
+        contenedor.style.height=String(altoPantalla*.9)+"px";
+        contenedor.style.width=String(altoPantalla*.9)*6/9+"px";
+    }
+}
+
 let rectcontenedor = contenedor.getBoundingClientRect();
 var contenedorW=rectcontenedor.width*.9; var contenedorH=rectcontenedor.height*.9;
 
@@ -169,6 +183,10 @@ window.onload = function() {
 
 
 /* -------------------- Funciones para dinámicas -------------------- */
+window.addEventListener("load", initContenedor);
+window.addEventListener("resize", initContenedor);
+
 window.addEventListener("load", initBotons);
 window.addEventListener("resize", initBotons);
 window.addEventListener("scroll", initBotons);
+
