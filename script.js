@@ -1,16 +1,20 @@
 // ------------------------ Inicialización de Ids
+let CV_foto=document.getElementById("CV_foto")
 let botonA0="";let botonA1="";let botonA2="";
 let botonS0=""; let botonS1=""; let botonS2=""; 
 let triangle0="";let triangle1="";let triangle2="";
 let titulo_0="";let titulo_1="";let titulo_2="";
-let IH_0=""; let IH_1=""; let IH_2=""; 
+let H_0=""; let H_1=""; let H_2=""; 
 for(let b =0;b<3;b++){
     eval("botonA"+String(b)+" = document.getElementById('botonA"+String(b)+"');");
     eval("botonS"+String(b)+" = document.getElementById('botonS"+String(b)+"');");
     eval("triangle"+String(b)+" = document.getElementById('triangle"+String(b)+"');");
     eval("titulo_"+String(b)+"= document.getElementById('titulo_"+String(b)+"');");
-    eval("IH_"+String(b)+"= document.getElementsByClassName('H_"+String(b)+"');");
+    eval("H_"+String(b)+"= document.getElementsByClassName('H_"+String(b)+"');");
 }
+let estudios =  document.getElementById("estudios_p1")
+let dropdown_0="";let dropdown_1="";let dropdown_2="";let dropdown_3="";
+for(let b =0;b<=3;b++){eval("dropdown_"+String(b)+" = document.getElementById('estds_"+String(b)+"');");}
 
 // ----------------------- Se adecua el tamaño del contenedor
 function initContenedor(){
@@ -42,6 +46,7 @@ function initBotons(){
     rectcontenedor = contenedor.getBoundingClientRect();
     contenedorW=rectcontenedor.width*.9; contenedorH=rectcontenedor.height*.9;
 
+    CV_foto.style.opacity=1 // <<<< Opacidad Foto
     for(let b=0;b<3;b++){
         // ------------------------ Inicialización de Botones
         eval("botonA"+String(b)+'.style.left = "'+String(posBA[b])+'%";')
@@ -64,14 +69,17 @@ function initBotons(){
         // ------------------------ Inicialización de titulos
         eval("titulo_"+String(b)+'.style.fontSize = "'+String(Math.floor(contenedorW*.06))+'px";');
         eval("titulo_"+String(b)+'.style.opacity = 1');
-        if(eval("IH_"+String(b))){
-            for (let Hh of eval("IH_"+String(b))) {
+        // ------------------------ Inicialización de Hs
+        if(eval("H_"+String(b))){
+            for (let Hh of eval("H_"+String(b))){
                 eval('Hh.style.fontSize = "'+String(Math.floor(contenedorW*.06/(b*.6+1)))+'px";');
-                eval('Hh.style.opacity = 1');
-            }
-
-        }
+                eval('Hh.style.opacity = 1');}}        
     }
+    // ------------------------ Inicialización de dropdown
+    for(let b=0;b<=3;b++){
+        eval('dropdown_'+String(b)+'.style.width = "'+String(contenedorW*.79)+'px"')
+        eval('dropdown_'+String(b)+'.style.left = "'+String(-contenedorW*.9/4*b)+'px"')}
+    estudios.style.opacity=1
 }
 
 function blockBotons(estado){
@@ -126,14 +134,16 @@ function nextPage(pageId) {
         }
         // ------------------------------------------------ Desparición Letras
         if(cb<=50){
+            CV_foto.style.opacity=String((50-cb)/50)
             eval("titulo_"+String(parseInt(pageId.at(-1))-1)+".style.opacity = "+String((50-cb)/50))
             for(let b =0;b<3;b++){
-                if(eval("IH_"+String(b))){
-                    for (let Hh of eval("IH_"+String(b))) {
+                if(eval("H_"+String(b))){
+                    for (let Hh of eval("H_"+String(b))) {
                         eval("Hh.style.opacity = "+String((50-cb)/50))
                     }
                 }
             }
+            estudios.style.opacity=String((50-cb)/50)
         }
 
 
