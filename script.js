@@ -12,10 +12,18 @@ for(let b =0;b<3;b++){
     eval("titulo_"+String(b)+"= document.getElementById('titulo_"+String(b)+"');");
     eval("H_"+String(b)+"= document.getElementsByClassName('H_"+String(b)+"');");
 }
-let estudios =  document.getElementById("estudios_p1")
-let dropdown_0="";let dropdown_1="";let dropdown_2="";let dropdown_3="";
-for(let b =0;b<=3;b++){eval("dropdown_"+String(b)+" = document.getElementById('estds_"+String(b)+"');");}
-
+let estudios =  document.getElementById("Iestudios")
+let drpdwnStds_0="";let drpdwnStds_1="";let drpdwnStds_2="";let drpdwnStds_3="";
+// ----------------------- Centra los dropdowns de estudios
+for(let b=0;b<=3;b++){eval("drpdwnStds_"+String(b)+" = document.getElementById('estds_"+String(b)+"');");}
+// ----------------------- Inicializa width de dropdown de programas
+let sftwrd_0=""; let sftwrd_1=""; let sftwrd_2=""; let sftwrd_3=""; let sftwrd_4=""; let sftwrd_5=""; let sftwrd_6=""; let sftwrd_7="";
+let vSftwr=[70,70,45,47,79,38,88,130]
+let drpDwnSftwr=document.getElementsByClassName("drpdwnSftwr")
+for (let cid = 0; cid < drpDwnSftwr.length; cid++) {
+    console.log(drpDwnSftwr[cid].id," --- ",drpDwnSftwr[cid].id.at(-1))
+    eval("document.getElementById('"+drpDwnSftwr[cid].id+"').style.width='"+drpDwnSftwr[cid].id.at(-1)*vSftwr[cid]+"%'");
+}
 // ----------------------- Se adecua el tamaño del contenedor
 function initContenedor(){
     contenedor = document.getElementById("contenedor");
@@ -51,8 +59,10 @@ function initBotons(){
         // ------------------------ Inicialización de Botones
         eval("botonA"+String(b)+'.style.left = "'+String(posBA[b])+'%";')
         eval("botonA"+String(b)+".style.zIndex ="+String(indxBA[b]))
+        eval("botonA"+String(b)+'.style.fontSize ="'+String(Math.floor(contenedorW*.039))+'px";')
         eval("botonS"+String(b)+'.style.left = "'+String(posBS[b])+'%";')
         eval("botonS"+String(b)+".style.zIndex ="+String(indxBS[b]))
+        eval("botonS"+String(b)+'.style.fontSize ="'+String(Math.floor(contenedorW*.039))+'px";')
         // ------------------------ Inicialización de Triangulos
         if(b==0||b==2){
             eval("triangle"+String(b)+'.style.borderTop = ""')
@@ -75,10 +85,10 @@ function initBotons(){
                 eval('Hh.style.fontSize = "'+String(Math.floor(contenedorW*.06/(b*.6+1)))+'px";');
                 eval('Hh.style.opacity = 1');}}        
     }
-    // ------------------------ Inicialización de dropdown
+    // ------------------------ Inicialización de drpdwnStds
     for(let b=0;b<=3;b++){
-        eval('dropdown_'+String(b)+'.style.width = "'+String(contenedorW*.79)+'px"')
-        eval('dropdown_'+String(b)+'.style.left = "'+String(-contenedorW*.9/4*b)+'px"')}
+        eval('drpdwnStds_'+String(b)+'.style.width = "'+String(contenedorW*.79)+'px"')
+        eval('drpdwnStds_'+String(b)+'.style.left = "'+String(-contenedorW*.9/4*b)+'px"')}
     estudios.style.opacity=1
 }
 

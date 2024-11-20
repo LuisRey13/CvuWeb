@@ -60,7 +60,7 @@ body {
 #titulo_0{
     position: absolute;
     width: 97%;
-    top: -1%;
+    top: -1.9%;
     right: 3%;
     text-align: right;
     font-weight: bold;
@@ -79,7 +79,7 @@ body {
     position: absolute;
     width: 60%;
     height:5%;
-    top:11%;
+    top:9%;
     right: 3%;
 }
 .txt_TM{
@@ -115,16 +115,29 @@ body {
 #resumen{
     position: absolute;
     width: 73%;
-    top:16%;
+    top:11.9%;
     right: 3%;
     text-align: justify;
     font-size: 13px;
     background: linear-gradient(to bottom right, transparent 0%, transparent 50%, white 50%, white 100%);
     background-color: rgb(255, 255, 255);
 }
-#estudios_p1{
+.div_estudios{
     position: absolute;
-    top: 46%;
+    top: 40%;
+    left: 17%;
+    width: 30%;
+    height: 3.3%;
+    display: flex;
+    align-content: center;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    color: rgb(0, 39, 147);
+}
+.estudios{
+    position: absolute;
+    top: 43%;
     width: 80%;
     height: 3%;
     right: 3%;
@@ -133,15 +146,17 @@ body {
     align-items: center;
     text-align: center;
     justify-content: space-around;
+    border-radius:5px;
     background-color: rgb(0, 0, 0);
     color: #ffffff;
+    z-index: 3;
 }
 .stdiosD{
     display: inline-block;
     position: relative;
     font-weight: bold;
 }
-.dropdown{
+.drpdwnStds{
     display: none;
     position: absolute;
     top: 100%;
@@ -150,22 +165,23 @@ body {
     background-color:#fff;
     border-radius:5px;
     box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
-    z-index: 1;
+    z-index: 6;
 }
-.stdiosD:hover .dropdown{
+.stdiosD:hover .drpdwnStds{
     display: block;
 }
 .ExpLab{
     position: absolute;
     width: 83%;
-    top:53%;
+    top:48%;
     right: 3%;
     text-align: justify;
     font-weight: bold;
     color: rgb(0, 39, 113);
+    z-index: 1;
 }
 .ExpLabFR{
-    margin-top: 1%;
+    margin-top: .5%;
     margin-left: 3%;
     color: #000000;
 }
@@ -177,26 +193,103 @@ body {
     margin-left: 9%;
 }
 
+.div_Software{
+    position: absolute;
+    top: 83%;
+    left: 3%;
+    width: 30%;
+    height: 3.3%;
+    display: flex;
+    align-content: center;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    color: rgb(0, 39, 147);
+}
+.programas{
+    position: absolute;
+    top: 86%;
+    width: 93.9%;
+    height: 9%;
+    right: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius:5px;
+    background-color: rgb(0, 0, 0);
+    color: #ffffff;
+    z-index: 1;
+}
+
+.SftwrInfo{
+    position: absolute;
+    width: 100%;
+    height: 55%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    color: #ffffff;
+}
+.SftwrInfo_0{
+    top: 6%;
+}
+.SftwrInfo_1{
+    top: 50%;
+}
+
+
+.SftwrD{
+    display: inline-block;
+    position: relative;
+    font-weight: bold;
+}
+.drpdwnSftwr{
+    display: none;
+    position: absolute;
+    height: 390%;
+    top: -300%;
+    left:-33%;
+    overflow: auto;
+    color: #000000;
+    background-color:#fff;
+    border-radius:5px;
+    box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+    z-index: 1;
+}
+
+.SftwrD:hover .drpdwnSftwr{
+    display: flex;
+    flex-direction: row;
+}
+
+#img_prgrms{
+    position: relative;
+    width: 70%;
+}
+
+
+/* -------------------------------- BOTON -------------------------------- */
 .page-nav{
     position: absolute;
     bottom: 0%;
     left: 0%;
     width: 100%;
-    height: 10%;
-    background-color: rgb(255, 255, 255);
+    height: 3.9%;
     display: flex;
 }
-
 .boton{
     position: absolute;
-    top:60%;
-    transform: translate(-50%, -50%);
+    bottom:0%;
+    transform: translateX(-50%);
     width: 30%;
-    height: 39%;
+    height: 100%;
     font-weight: bold;
     border-radius: 10%;
     color: #ffffff;
-    background-color: #000000;
+    background-color: rgb(0, 0, 0);
     font-size: calc(1vw + 1vh);
     font-weight: bold;
 }
