@@ -18,12 +18,11 @@ let drpdwnStds_0="";let drpdwnStds_1="";let drpdwnStds_2="";let drpdwnStds_3="";
 for(let b=0;b<=3;b++){eval("drpdwnStds_"+String(b)+" = document.getElementById('estds_"+String(b)+"');");}
 // ----------------------- Inicializa width de dropdown de programas
 let sftwrd_0=""; let sftwrd_1=""; let sftwrd_2=""; let sftwrd_3=""; let sftwrd_4=""; let sftwrd_5=""; let sftwrd_6=""; let sftwrd_7="";
-let vSftwr=[80,80,50,55,90,45,100,150]
 let drpDwnSftwr=document.getElementsByClassName("drpdwnSftwr")
 for (let cid = 0; cid < drpDwnSftwr.length; cid++) {
     eval("sftwrd_"+String(cid)+" = document.getElementById('"+drpDwnSftwr[cid].id+"')");
-    //eval("sftwrd_"+String(cid)+".style.width='"+drpDwnSftwr[cid].id.at(-1)*vSftwr[cid]+"%'");
 }
+let img_prgrms = document.getElementsByClassName("img_prgrms")
 // ----------------------- Se adecua el tamaño del contenedor
 function initContenedor(){
     contenedor = document.getElementById("contenedor");
@@ -93,6 +92,10 @@ function initBotons(){
     // ------------------------ Inicialización de drpdwnSoftware
     for (let cid = 0; cid < drpDwnSftwr.length; cid++) {
         eval("sftwrd_"+String(cid)+".style.width='"+contenedorW*drpDwnSftwr[cid].id.at(-1)*.139+"px'");
+    }
+    for (let Hh of img_prgrms){
+        Hh.style.width=contenedorW/7+"px"
+        Hh.style.height=contenedorH/11+"px"
     }
 }
 

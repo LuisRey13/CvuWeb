@@ -265,9 +265,8 @@ body {
     flex-direction: row;
 }
 
-#img_prgrms{
+.img_prgrms{
     position: relative;
-    width: 70%;
 }
 
 
