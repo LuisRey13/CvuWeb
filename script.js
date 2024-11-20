@@ -92,7 +92,7 @@ function initBotons(){
     estudios.style.opacity=1
     // ------------------------ Inicialización de drpdwnSoftware
     for (let cid = 0; cid < drpDwnSftwr.length; cid++) {
-        eval("sftwrd_"+String(cid)+".style.width='"+contenedorW*drpDwnSftwr[cid].id.at(-1)*.1+"px'");
+        eval("sftwrd_"+String(cid)+".style.width='"+contenedorW*drpDwnSftwr[cid].id.at(-1)*.139+"px'");
     }
 }
 
