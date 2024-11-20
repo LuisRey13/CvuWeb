@@ -21,8 +21,8 @@ let sftwrd_0=""; let sftwrd_1=""; let sftwrd_2=""; let sftwrd_3=""; let sftwrd_4
 let vSftwr=[80,80,50,55,90,45,100,150]
 let drpDwnSftwr=document.getElementsByClassName("drpdwnSftwr")
 for (let cid = 0; cid < drpDwnSftwr.length; cid++) {
-    console.log(drpDwnSftwr[cid].id," --- ",drpDwnSftwr[cid].id.at(-1))
-    eval("document.getElementById('"+drpDwnSftwr[cid].id+"').style.width='"+drpDwnSftwr[cid].id.at(-1)*vSftwr[cid]+"%'");
+    eval("sftwrd_"+String(cid)+" = document.getElementById('"+drpDwnSftwr[cid].id+"')");
+    //eval("sftwrd_"+String(cid)+".style.width='"+drpDwnSftwr[cid].id.at(-1)*vSftwr[cid]+"%'");
 }
 // ----------------------- Se adecua el tamaño del contenedor
 function initContenedor(){
@@ -90,6 +90,10 @@ function initBotons(){
         eval('drpdwnStds_'+String(b)+'.style.width = "'+String(contenedorW*.79)+'px"')
         eval('drpdwnStds_'+String(b)+'.style.left = "'+String(-contenedorW*.9/4*b)+'px"')}
     estudios.style.opacity=1
+    // ------------------------ Inicialización de drpdwnSoftware
+    for (let cid = 0; cid < drpDwnSftwr.length; cid++) {
+        eval("sftwrd_"+String(cid)+".style.width='"+contenedorW*drpDwnSftwr[cid].id.at(-1)*.1+"px'");
+    }
 }
 
 function blockBotons(estado){
