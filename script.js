@@ -18,7 +18,7 @@ let drpdwnStds_0="";let drpdwnStds_1="";let drpdwnStds_2="";let drpdwnStds_3="";
 for(let b=0;b<=3;b++){eval("drpdwnStds_"+String(b)+" = document.getElementById('estds_"+String(b)+"');");}
 // ----------------------- Inicializa width de dropdown de programas
 let sftwrd_0=""; let sftwrd_1=""; let sftwrd_2=""; let sftwrd_3=""; let sftwrd_4=""; let sftwrd_5=""; let sftwrd_6=""; let sftwrd_7="";
-let vSftwr=[70,70,45,47,79,38,88,130]
+let vSftwr=[80,80,50,55,90,45,100,150]
 let drpDwnSftwr=document.getElementsByClassName("drpdwnSftwr")
 for (let cid = 0; cid < drpDwnSftwr.length; cid++) {
     console.log(drpDwnSftwr[cid].id," --- ",drpDwnSftwr[cid].id.at(-1))
