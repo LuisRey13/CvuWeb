@@ -81,7 +81,7 @@ function initBotons(){
         // ------------------------ Inicialización de Hs
         if(eval("H_"+String(b))){
             for (let Hh of eval("H_"+String(b))){
-                eval('Hh.style.fontSize = "'+String(Math.floor(contenedorW*.06/(b*.6+1)))+'px";');
+                eval('Hh.style.fontSize = "'+String(Math.floor(contenedorW*.056/(b*.6+1)))+'px";');
                 eval('Hh.style.opacity = 1');}}        
     }
     // ------------------------ Inicialización de drpdwnStds
@@ -94,8 +94,8 @@ function initBotons(){
         eval("sftwrd_"+String(cid)+".style.width='"+contenedorW*drpDwnSftwr[cid].id.at(-1)*.139+"px'");
     }
     for (let Hh of img_prgrms){
-        Hh.style.width=contenedorW/7+"px"
-        Hh.style.height=contenedorH/11+"px"
+        Hh.style.width=contenedorW/7+"px";
+        Hh.style.height=contenedorH/11+"px";
     }
 }
 
