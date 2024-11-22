@@ -60,9 +60,9 @@ body {
 #Mi_Nombre{
     position: absolute;
     width: 60%;
-    height: 9%;
+    height: 10%;
     top: 1%;
-    right: 9%;
+    right: 13%;
 }
 #CV_foto{
     position: relative;
@@ -174,7 +174,7 @@ body {
     right: 3%;
     text-align: justify;
     font-weight: bold;
-    color: rgb(0, 39, 113);
+    color: rgb(0, 39, 147);
     z-index: 1;
 }
 .ExpLabFR{
@@ -265,6 +265,38 @@ body {
 .img_prgrms{
     position: relative;
 }
+/* -------------------------------  PAGINA 1 ------------------------------- */
+#titulo_1{
+    position: absolute;
+    left: 3%;
+    top:1%;
+    color: rgb(0, 39, 147);
+}
+.habilidades{
+    position: absolute;
+    width: 70%;
+    height: auto;
+    top: 3.9%;
+    left: 3%;
+    text-align: justify;
+}
+#DiagHab_foto{
+    position: absolute;
+    width: 79%;
+    height: 39%;
+    top: 19%;
+    left: 3%;
+}
+#hexaHab_foto{
+    position: absolute;
+    width: 79%;
+    height: 39%;
+    top: 19%;
+    left: 3%;
+    scale: .39;
+}
+
+
 
 
 /* -------------------------------- BOTON -------------------------------- */

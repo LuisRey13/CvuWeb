@@ -23,6 +23,7 @@ for (let cid = 0; cid < drpDwnSftwr.length; cid++) {
     eval("sftwrd_"+String(cid)+" = document.getElementById('"+drpDwnSftwr[cid].id+"')");
 }
 let img_prgrms = document.getElementsByClassName("img_prgrms")
+let hexaHab_foto = document.getElementById("hexaHab_foto")
 // ----------------------- Se adecua el tamaño del contenedor
 function initContenedor(){
     contenedor = document.getElementById("contenedor");
@@ -53,7 +54,7 @@ function initBotons(){
     rectcontenedor = contenedor.getBoundingClientRect();
     contenedorW=rectcontenedor.width*.9; contenedorH=rectcontenedor.height*.9;
 
-    CV_foto.style.opacity=1 // <<<< Opacidad Foto
+    CV_foto.style.opacity=.7 // <<<< Opacidad Foto
     for(let b=0;b<3;b++){
         // ------------------------ Inicialización de Botones
         eval("botonA"+String(b)+'.style.left = "'+String(posBA[b])+'%";')
@@ -81,7 +82,7 @@ function initBotons(){
         // ------------------------ Inicialización de Hs
         if(eval("H_"+String(b))){
             for (let Hh of eval("H_"+String(b))){
-                eval('Hh.style.fontSize = "'+String(Math.floor(contenedorW*.058/(b*.6+1)))+'px";');
+                eval('Hh.style.fontSize = "'+String(Math.floor(contenedorW*.057/(b*.6+1)))+'px";');
                 eval('Hh.style.opacity = 1');}}        
     }
     // ------------------------ Inicialización de drpdwnStds
@@ -149,9 +150,9 @@ function nextPage(pageId) {
                 hs++;    
             }
         }
-        // ------------------------------------------------ Desparición Letras
+        // ------------------------------------------------ Desaparición Letras
         if(cb<=50){
-            CV_foto.style.opacity=String((50-cb)/50)
+            CV_foto.style.opacity=String(.7*(50-cb)/50)
             eval("titulo_"+String(parseInt(pageId.at(-1))-1)+".style.opacity = "+String((50-cb)/50))
             for(let b =0;b<3;b++){
                 if(eval("H_"+String(b))){
@@ -162,8 +163,6 @@ function nextPage(pageId) {
             }
             estudios.style.opacity=String((50-cb)/50)
         }
-
-
         if(cb>=100){
             const currentActivePage = document.querySelector(".pagina.active");
             currentActivePage.classList.remove("active");
@@ -173,6 +172,8 @@ function nextPage(pageId) {
             blockBotons(false)
             return; // Salir del ciclo
         }
+
+
         cb++;
         setTimeout(movimiento, 10);
     }
@@ -221,8 +222,19 @@ function previousPage(pageId) {
             }
 
         }
-
-
+        // ------------------------------------------------ Desaparición Letras
+        if(cb<=50){
+            CV_foto.style.opacity=String(.7*(50-cb)/50)
+            eval("titulo_"+String(parseInt(pageId.at(-1)))+".style.opacity = "+String((50-cb)/50))
+            for(let b =0;b<3;b++){
+                if(eval("H_"+String(b))){
+                    for (let Hh of eval("H_"+String(b))) {
+                        eval("Hh.style.opacity = "+String((50-cb)/50))
+                    }
+                }
+            }
+            estudios.style.opacity=String((50-cb)/50)
+        }
 
         if(cb>=100){
             const currentActivePage = document.querySelector(".pagina.active");
@@ -255,6 +267,9 @@ const palpitar = () => {
     let esc= Math.sin(cs);
     contenedor.style.boxShadow = "0 0 "+String(esc*30)+"px rgb(0, 153, 255), 0 0 "+String(esc*30)+"px rgb(0, 153, 255), 0 0 "+String(esc*66)+"px rgb(0, 153, 255)";
     setTimeout(palpitar, 100);
+    // ------------------------------------------------ Animación exagono
+    hexaHab_foto.style.scale = cs/Math.PI
+    
 }
 
 palpitar()
